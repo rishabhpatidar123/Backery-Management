@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           
           <div className="flex flex-col items-start">
-            <h2 className="text-2xl font-serif font-bold text-white mb-6">Sweet Delights<span className="text-primary">.</span></h2>
+            <h2 className="text-2xl font-serif font-bold text-white mb-6">BAKE ME <span className="text-primary">BLUSH</span></h2>
             <p className="text-white/60 mb-6 leading-relaxed max-w-xs">
               Crafting sweet memories one cake at a time. Visit us for a taste of happiness.
             </p>
@@ -56,7 +56,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 mt-16 pt-8 text-center text-white/40 text-sm">
-          <p>© {new Date().getFullYear()} Sweet Delights Bakery. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} BAKE ME BLUSH. All rights reserved.</p>
         </div>
       </div>
     </footer>

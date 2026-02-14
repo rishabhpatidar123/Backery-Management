@@ -34,7 +34,7 @@ export default function Navbar() {
       <div className="container mx-auto px-6 flex items-center justify-between">
         <Link href="/">
           <a className="text-2xl font-serif font-bold text-accent tracking-tight">
-            Sweet Delights<span className="text-primary">.</span>
+            BAKE ME <span className="text-primary">BLUSH</span>
           </a>
         </Link>
 

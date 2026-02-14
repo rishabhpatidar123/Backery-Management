@@ -23,7 +23,7 @@ export default function AboutSection() {
             <h2 className="text-sm font-bold tracking-widest uppercase text-primary mb-2">Our Story</h2>
             <h3 className="text-4xl md:text-5xl font-serif font-bold text-accent mb-6">Baking with Love, Since 2010</h3>
             <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-              Founded by master pastry chef Elena Rossi, Sweet Delights began with a simple mission: to create desserts that not only look spectacular but taste even better. 
+              Founded by master pastry chef Elena Rossi, BAKE ME BLUSH began with a simple mission: to create desserts that not only look spectacular but taste even better. 
             </p>
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
               We believe in using only the finest ingredients—Madagascar vanilla beans, Belgian chocolate, and locally sourced fruits. Every cake that leaves our kitchen is a work of art, designed to make your celebrations unforgettable.
