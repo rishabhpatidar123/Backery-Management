@@ -1,0 +1,97 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Premium Bakery — Orange palette */
+  --color-background: #fff7ed;
+  --color-foreground: #1f2937;
+
+  --color-card: #ffffff;
+  --color-card-foreground: #1f2937;
+
+  --color-popover: #ffffff;
+  --color-popover-foreground: #1f2937;
+
+  --color-primary: #d97706;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #f59e0b;
+  --color-secondary-foreground: #1f2937;
+
+  --color-muted: #ffedd5;
+  --color-muted-foreground: #6b7280;
+
+  --color-accent: #1f2937;
+  --color-accent-foreground: #ffffff;
+
+  --color-destructive: hsl(0 84% 60%);
+  --color-destructive-foreground: hsl(0 0% 98%);
+
+  --color-border: #fed7aa;
+  --color-input: #fed7aa;
+  --color-ring: #d97706;
+
+  --color-chart-1: #d97706;
+  --color-chart-2: #f59e0b;
+  --color-chart-3: #1f2937;
+  --color-chart-4: #ffedd5;
+  --color-chart-5: #92400e;
+
+  --color-sidebar: #1f2937;
+  --color-sidebar-foreground: #fff7ed;
+  --color-sidebar-primary: #d97706;
+  --color-sidebar-primary-foreground: #ffffff;
+  --color-sidebar-accent: #374151;
+  --color-sidebar-accent-foreground: #fff7ed;
+  --color-sidebar-border: #374151;
+  --color-sidebar-ring: #f59e0b;
+
+  --font-sans: "Montserrat", sans-serif;
+  --font-serif: "Playfair Display", serif;
+
+  --radius: 0.75rem;
+}
+
+.dark {
+  --color-background: #111827;
+  --color-foreground: #fff7ed;
+  --color-card: #1f2937;
+  --color-card-foreground: #fff7ed;
+  --color-popover: #1f2937;
+  --color-popover-foreground: #fff7ed;
+  --color-primary: #f59e0b;
+  --color-primary-foreground: #1f2937;
+  --color-secondary: #374151;
+  --color-secondary-foreground: #fff7ed;
+  --color-muted: #374151;
+  --color-muted-foreground: #9ca3af;
+  --color-accent: #f59e0b;
+  --color-accent-foreground: #1f2937;
+  --color-border: #374151;
+  --color-input: #374151;
+  --color-ring: #f59e0b;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground selection:bg-primary/30;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif font-bold text-foreground;
+  }
+}
