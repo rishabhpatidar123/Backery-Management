@@ -49,49 +49,207 @@ export async function registerRoutes(
 
       // Seed products
       const productsData = [
-        ...["Mango Cake", "Gupchup Malai Cake", "Kaju Katli Cake", "Rasmalai Cake"].map(name => ({
-          name,
-          description: `Delicious ${name} fusion slice.`,
-          price: 399.0,
-          image: "/images/cake-strawberry.png",
-          category: fusionCat._id,
-          isFeatured: true
-        })),
-        ...["Oreo Cake", "Strawberry Chocolate Cake", "Cherry Choco Cake", "ChocoCharm Cake", "Ferrero Rocher Cake", "Dark Chocolate Cake"].map(name => ({
-          name,
-          description: `Rich ${name} delight.`,
-          price: 499.0,
-          image: "/images/cake-chocolate.png",
-          category: chocolateCat._id,
-          isFeatured: true
-        })),
-        ...["Black Forest Cake", "Pineapple Cake", "Strawberry Cake", "Black Current Cake", "Butterscotch Cake", "Red Velvet Cake"].map(name => ({
-          name,
-          description: `Classic ${name} taste.`,
-          price: 349.0,
-          image: "/images/cake-floral.png",
-          category: regularCat._id,
-          isFeatured: false
-        })),
-        ...["Vanilla Sprinkle Cupcake", "Chocolate Hazelnut Cupcake"].map(name => ({
-          name,
-          description: `Special cupcake.`,
-          price: 150.0,
-          image: "https://images.unsplash.com/photo-1576618148400-f54bed99fcfd",
-          category: cupcakesCat._id,
-          isFeatured: false
-        })),
-      ];
+  // Fusion Cakes
+  {
+    name: "Mango Cake",
+    description: "Delicious Mango Cake fusion slice.",
+    price: 299.0,
+    image: "/images/cakes/mango-cake.png",
+    category: fusionCat._id,
+    isFeatured: true
+  },
+  {
+    name: "Gupchup Malai Cake",
+    description: "Delicious Gupchup Malai Cake fusion slice.",
+    price: 299.0,
+    image: "/images/cakes/Gupchup-cake.png",
+    category: fusionCat._id,
+    isFeatured: true
+  },
+  {
+    name: "Kaju Katli Cake",
+    description: "Delicious Kaju Katli Cake fusion slice.",
+    price: 299.0,
+    image: "/images/cakes/Kaju-cake.png",
+    category: fusionCat._id,
+    isFeatured: true
+  },
+  {
+    name: "Rasmalai Cake",
+    description: "Delicious Rasmalai Cake fusion slice.",
+    price: 299.0,
+    image: "/images/cakes/Rasmalai-cake.png",
+    category: fusionCat._id,
+    isFeatured: true
+  },
+
+  // Chocolate Cakes
+  {
+    name: "Oreo Cake",
+    description: "Rich Oreo Cake delight.",
+    price: 299.0,
+    image: "/images/cakes/Oreo-cake.png",
+    category: chocolateCat._id,
+    isFeatured: true
+  },
+  {
+    name: "Strawberry Chocolate Cake",
+    description: "Rich Strawberry Chocolate Cake delight.",
+    price: 299.0,
+    image: "/images/cakes/Strawberrychoco-cake.png",
+    category: chocolateCat._id,
+    isFeatured: true
+  },
+  {
+    name: "Cherry Choco Cake",
+    description: "Rich Cherry Choco Cake delight.",
+    price: 299.0,
+    image: "/images/cakes/Cherry-cake.png",
+    category: chocolateCat._id,
+    isFeatured: true
+  },
+  {
+    name: "ChocoCharm Cake",
+    description: "Rich ChocoCharm Cake delight.",
+    price: 299.0,
+    image: "/images/cakes/Flutter-cake.png",
+    category: chocolateCat._id,
+    isFeatured: true
+  },
+  {
+    name: "Ferrero Rocher Cake",
+    description: "Rich Ferrero Rocher Cake delight.",
+    price: 299.0,
+    image: "/images/cakes/Ferrero-cake.png",
+    category: chocolateCat._id,
+    isFeatured: true
+  },
+  {
+    name: "Dark Chocolate Cake",
+    description: "Rich Dark Chocolate Cake delight.",
+    price: 299.0,
+    image: "/images/cakes/Dark-cake.png",
+    category: chocolateCat._id,
+    isFeatured: true
+  },
+
+  // Regular Cakes
+  {
+    name: "Black Forest Cake",
+    description: "Classic Black Forest Cake taste.",
+    price: 299.0,
+    image: "/images/cakes/Black-cake.png",
+    category: regularCat._id,
+    isFeatured: false
+  },
+  {
+    name: "Pineapple Cake",
+    description: "Classic Pineapple Cake taste.",
+    price: 299.0,
+    image: "/images/cakes/Pineapple.png",
+    category: regularCat._id,
+    isFeatured: false
+  },
+  {
+    name: "Strawberry Cake",
+    description: "Classic Strawberry Cake taste.",
+    price: 299.0,
+    image: "/images/cakes/Strawberry-cakes.png",
+    category: regularCat._id,
+    isFeatured: false
+  },
+  {
+    name: "Black Current Cake",
+    description: "Classic Black Current Cake taste.",
+    price: 299.0,
+    image: "/images/cakes/Blackcurrent-cake.png",
+    category: regularCat._id,
+    isFeatured: false
+  },
+  {
+    name: "Butterscotch Cake",
+    description: "Classic Butterscotch Cake taste.",
+    price: 299.0,
+    image: "/images/cakes/Butterscotch-cake.png",
+    category: regularCat._id,
+    isFeatured: false
+  },
+  {
+    name: "Red Velvet Cake",
+    description: "Classic Red Velvet Cake taste.",
+    price: 299.0,
+    image: "/images/cakes/Redvalvet-cake.png",
+    category: regularCat._id,
+    isFeatured: false
+  },
+
+  // Cup Cakes
+{
+  name: "Vanilla Cup Cake",
+  description: "Special vanilla cupcake.",
+  price: 199.0,
+  image: "/images/cakes/Vanillacup-cakes.png",
+  category: cupcakesCat._id,
+  isFeatured: false
+},
+{
+  name: "Chocolate Cup Cake",
+  description: "Special chocolate cupcake.",
+  price: 199.0,
+  image: "/images/cakes/Chocolatecup-cake.png",
+  category: cupcakesCat._id,
+  isFeatured: false
+},
+{
+  name: "Red Velvet Cup Cake",
+  description: "Special red velvet cupcake.",
+  price: 199.0,
+  image: "/images/cakes/Richoreocup-cake.png",
+  category: cupcakesCat._id,
+  isFeatured: false
+},
+{
+  name: "Strawberry Cup Cake",
+  description: "Special strawberry cupcake.",
+  price: 199.0,
+  image: "/images/cakes/Strawberrycup-cake.png",
+  category: cupcakesCat._id,
+  isFeatured: false
+}
+];
 
       await Product.insertMany(productsData);
       console.log("Products seeded successfully!");
       
       const subcatsData = [
-        ...["Mango Cake", "Gupchup Malai Cake", "Kaju Katli Cake", "Rasmalai Cake"].map((name, i) => ({ categoryId: "cat-fusion", categoryName: "Fusion Cakes", categorySlug: "fusion-cakes", name, weightLabel: "500g", price: 399, imageUrl: "/images/cake-strawberry.png" })),
-        ...["Oreo Cake", "Strawberry Chocolate Cake", "Cherry Choco Cake", "ChocoCharm Cake", "Ferrero Rocher Cake", "Dark Chocolate Cake"].map((name, i) => ({ categoryId: "cat-chocolate", categoryName: "Chocolate Cakes", categorySlug: "chocolate-cakes", name, weightLabel: "500g", price: 499, imageUrl: "/images/cake-chocolate.png" })),
-        ...["Black Forest", "Pineapple Cake", "Strawberry Cake", "Black Current Cake", "Butterscotch Cake", "Red Velvet Cake"].map((name, i) => ({ categoryId: "cat-regular", categoryName: "Regular Cakes", categorySlug: "regular-cakes", name, weightLabel: "500g", price: 349, imageUrl: "/images/cake-floral.png" })),
-        ...["Vanilla Cup Cake", "Chocolate Cup Cake", "Red Velvet Cup Cake", "Strawberry Cup Cake"].map((name, i) => ({ categoryId: "cat-cup-cakes", categoryName: "Cup Cakes", categorySlug: "cup-cakes", name, weightLabel: "1 pc", price: 199, imageUrl: "https://images.unsplash.com/photo-1576618148400-f54bed99fcfd" })),
-      ];
+  // Fusion Cakes
+  { categoryId: "cat-fusion", categoryName: "Fusion Cakes", categorySlug: "fusion-cakes", name: "Mango Cake", weightLabel: "500g", price: 299, imageUrl: "/images/cakes/mango-cake.png" },
+  { categoryId: "cat-fusion", categoryName: "Fusion Cakes", categorySlug: "fusion-cakes", name: "Gupchup Malai Cake", weightLabel: "500g", price: 299, imageUrl: "/images/cakes/Gupchup-cake.png" },
+  { categoryId: "cat-fusion", categoryName: "Fusion Cakes", categorySlug: "fusion-cakes", name: "Kaju Katli Cake", weightLabel: "500g", price: 299, imageUrl: "/images/cakes/Kaju-cake.png" },
+  { categoryId: "cat-fusion", categoryName: "Fusion Cakes", categorySlug: "fusion-cakes", name: "Rasmalai Cake", weightLabel: "500g", price: 299, imageUrl: "/images/cakes/Rasmalai-cake.png" },
+
+  // Chocolate Cakes
+  { categoryId: "cat-chocolate", categoryName: "Chocolate Cakes", categorySlug: "chocolate-cakes", name: "Oreo Cake", weightLabel: "500g", price: 299, imageUrl: "/images/cakes/Oreo-cake.png" },
+  { categoryId: "cat-chocolate", categoryName: "Chocolate Cakes", categorySlug: "chocolate-cakes", name: "Strawberry Chocolate Cake", weightLabel: "500g", price: 299, imageUrl: "/images/cakes/Strawberrychoco-cake.png" },
+  { categoryId: "cat-chocolate", categoryName: "Chocolate Cakes", categorySlug: "chocolate-cakes", name: "Cherry Choco Cake", weightLabel: "500g", price: 299, imageUrl: "/images/cakes/Cherry-cake.png" },
+  { categoryId: "cat-chocolate", categoryName: "Chocolate Cakes", categorySlug: "chocolate-cakes", name: "ChocoCharm Cake", weightLabel: "500g", price: 299, imageUrl: "/images/cakes/Flutter-cake.png" },
+  { categoryId: "cat-chocolate", categoryName: "Chocolate Cakes", categorySlug: "chocolate-cakes", name: "Ferrero Rocher Cake", weightLabel: "500g", price: 299, imageUrl: "/images/cakes/Ferrero-cake.png" },
+  { categoryId: "cat-chocolate", categoryName: "Chocolate Cakes", categorySlug: "chocolate-cakes", name: "Dark Chocolate Cake", weightLabel: "500g", price: 299, imageUrl: "/images/cakes/Dark-cake.png" },
+
+  // Regular Cakes
+  { categoryId: "cat-regular", categoryName: "Regular Cakes", categorySlug: "regular-cakes", name: "Black Forest Cake", weightLabel: "500g", price: 299, imageUrl: "/images/cakes/Black-cake.png" },
+  { categoryId: "cat-regular", categoryName: "Regular Cakes", categorySlug: "regular-cakes", name: "Pineapple Cake", weightLabel: "500g", price: 349, imageUrl: "/images/cakes/Pineapple.png" },
+  { categoryId: "cat-regular", categoryName: "Regular Cakes", categorySlug: "regular-cakes", name: "Strawberry Cake", weightLabel: "500g", price: 299, imageUrl: "/images/cakes/Strawberry-cakes.png" },
+  { categoryId: "cat-regular", categoryName: "Regular Cakes", categorySlug: "regular-cakes", name: "Black Current Cake", weightLabel: "500g", price: 299, imageUrl: "/images/cakes/Blackcurrent-cake.png" },
+  { categoryId: "cat-regular", categoryName: "Regular Cakes", categorySlug: "regular-cakes", name: "Butterscotch Cake", weightLabel: "500g", price: 299, imageUrl: "/images/cakes/Butterscotch-cake.png" },
+  { categoryId: "cat-regular", categoryName: "Regular Cakes", categorySlug: "regular-cakes", name: "Red Velvet Cake", weightLabel: "500g", price: 299, imageUrl: "/images/cakes/Redvalvet-cake.png" },
+
+  // Cup Cakes
+  { categoryId: "cat-cup-cakes", categoryName: "Cup Cakes", categorySlug: "cup-cakes", name: "Vanilla Cup Cake", weightLabel: "1 pc", price: 199, imageUrl: "/images/cakes/Vanillacup-cakes.png" },
+  { categoryId: "cat-cup-cakes", categoryName: "Cup Cakes", categorySlug: "cup-cakes", name: "Chocolate Cup Cake", weightLabel: "1 pc", price: 199, imageUrl: "/images/cakes/Chocolatecup-cake.png" },
+  { categoryId: "cat-cup-cakes", categoryName: "Cup Cakes", categorySlug: "cup-cakes", name: "Red Velvet Cup Cake", weightLabel: "1 pc", price: 199, imageUrl: "/images/cakes/Richoreocup-cake.png" },
+  { categoryId: "cat-cup-cakes", categoryName: "Cup Cakes", categorySlug: "cup-cakes", name: "Strawberry Cup Cake", weightLabel: "1 pc", price: 199, imageUrl: "/images/cakes/Strawberrycup-cake.png" },
+];
       await Subcategory.insertMany(subcatsData);
       console.log("Subcategories seeded successfully!");
     }
