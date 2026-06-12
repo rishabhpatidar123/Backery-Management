@@ -7,12 +7,22 @@ import { useCart } from "@/hooks/use-cart";
 import { ShoppingBag, ArrowLeft, Plus, Minus } from "lucide-react";
 import StarRating from "@/components/star-rating";
 import { Skeleton } from "@/components/ui/skeleton";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 export default function SubcategoryDetails() {
   const [, params] = useRoute("/products/sub/:name");
   const subname = params?.name ? decodeURIComponent(params.name) : "";
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
+  const [message, setMessage] = useState("");
 
   const { data: allSubcategories = [], isLoading } = useQuery<any[]>({
     queryKey: ["/api/subcategories"],
@@ -70,6 +80,7 @@ export default function SubcategoryDetails() {
       {
         weightLabel: selected.weightLabel,
         price: selected.price,
+        message: message,
       }
     );
   };
@@ -103,53 +114,64 @@ export default function SubcategoryDetails() {
             <p className="text-3xl font-bold text-primary">
               ₹{selected.price.toLocaleString("en-IN")}
             </p>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="weight" className="text-[#2D3142] text-sm font-medium">Weight</Label>
+                <Select
+                  value={selectedWeight.toString()}
+                  onValueChange={(v) => setSelectedWeight(parseInt(v))}
+                >
+                  <SelectTrigger id="weight" className="h-12 rounded-lg border-gray-200 text-[#2D3142]">
+                    <SelectValue placeholder="Select weight" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {productVariants.map((opt, i) => (
+                      <SelectItem key={opt._id || opt.weightLabel} value={i.toString()}>
+                        {opt.weightLabel}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="message" className="text-[#2D3142] text-sm font-medium">Message on Cake</Label>
+                <Input
+                  id="message"
+                  placeholder="Write your message..."
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  className="h-12 rounded-lg border-orange-200 focus:border-orange-300 focus:ring-0 text-[#2D3142] placeholder:text-gray-400"
+                />
+              </div>
+            </div>
+
             <p className="leading-relaxed text-muted-foreground">
               A delicious and fresh {primary.name} from our {primary.categoryName} collection. 
               Baked to perfection with premium ingredients. Available in multiple weight options.
             </p>
 
-            {productVariants.length > 0 && (
-            <div>
-              <span className="text-sm font-bold uppercase">Weight / Size</span>
-              <div className="mt-2 flex flex-wrap gap-2">
-                {productVariants.map((opt, i) => (
-                  <button
-                    key={opt._id || opt.weightLabel}
-                    onClick={() => setSelectedWeight(i)}
-                    className={`rounded-xl border px-4 py-2 text-sm font-semibold transition-colors ${
-                      selectedWeight === i
-                        ? "border-primary bg-primary text-primary-foreground"
-                        : "border-border hover:border-primary"
-                    }`}
-                  >
-                    {opt.weightLabel}
-                  </button>
-                ))}
-              </div>
-            </div>
-            )}
-
             <div className="flex items-center gap-4">
-              <div className="flex items-center rounded-full border border-border p-1">
+              <div className="flex h-12 items-center rounded-lg border border-gray-100 bg-gray-50/50 px-2">
                 <button
                   onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-                  className="rounded-full p-2 hover:bg-muted"
+                  className="p-2 transition-colors hover:text-primary"
                 >
                   <Minus className="h-4 w-4" />
                 </button>
-                <span className="w-10 text-center font-bold">{quantity}</span>
+                <span className="w-12 text-center font-bold text-[#2D3142]">{quantity}</span>
                 <button
                   onClick={() => setQuantity((q) => q + 1)}
-                  className="rounded-full p-2 hover:bg-muted"
+                  className="p-2 transition-colors hover:text-primary"
                 >
                   <Plus className="h-4 w-4" />
                 </button>
               </div>
               <Button
                 onClick={handleAdd}
-                className="flex-1 rounded-full py-6 cursor-pointer"
+                className="h-12 flex-1 rounded-lg bg-[#2D3142] py-6 font-bold uppercase tracking-wide text-white hover:bg-[#1a1c26] cursor-pointer"
               >
-                <ShoppingBag className="mr-2 h-4 w-4" /> Add to Cart
+                Add to Cart
               </Button>
             </div>
           </div>
